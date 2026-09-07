@@ -1,0 +1,17 @@
+node_modules/
+playwright-report/
+test-results/
+test-logs/
+dist/
+.DS_Store
+.vscode/
+*.log
+*.xlsx
+node_modules/
+playwright-report/
+test-results/
+auth/storageState.json
+test-data/
+*.log
+npm-debug.log*
+coverage/

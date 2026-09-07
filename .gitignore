@@ -1,0 +1,34 @@
+# Node and Playwright dependencies
+**/node_modules/
+**/.pnp/
+**/.pnp.js
+
+# Playwright and test output
+**/test-results/
+**/playwright-report/
+**/blob-report/
+**/allure-report/
+**/allure-results/
+**/playwright/.cache/
+
+# Local authentication and runtime state
+**/storageState.json
+**/state.json
+**/.auth/
+**/.env
+**/.env.*
+!.env.example
+
+# Coverage and local logs
+**/coverage/
+**/test-logs/
+*.log
+**/*.tsbuildinfo
+**/.git.local-backup/
+**/.claude/settings.local.json
+**/.playwright-cli/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/

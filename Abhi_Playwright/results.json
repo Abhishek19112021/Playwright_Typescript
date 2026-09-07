@@ -1,0 +1,231 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\HP\\Desktop\\Abhi_Playwright\\playwright.config.js",
+    "rootDir": "C:/Users/HP/Desktop/Abhi_Playwright/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/HP/Desktop/Abhi_Playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chromium",
+        "name": "Chromium",
+        "testDir": "C:/Users/HP/Desktop/Abhi_Playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/HP/Desktop/Abhi_Playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Firefox",
+        "name": "Firefox",
+        "testDir": "C:/Users/HP/Desktop/Abhi_Playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/HP/Desktop/Abhi_Playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "WebKit",
+        "name": "WebKit",
+        "testDir": "C:/Users/HP/Desktop/Abhi_Playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/HP/Desktop/Abhi_Playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Chrome",
+        "name": "Mobile Chrome",
+        "testDir": "C:/Users/HP/Desktop/Abhi_Playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/HP/Desktop/Abhi_Playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari",
+        "name": "Mobile Safari",
+        "testDir": "C:/Users/HP/Desktop/Abhi_Playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "results.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "3way",
+    "version": "1.60.0",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "APITesting.spec.js",
+      "file": "APITesting.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Add to Cart",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chromium",
+              "projectName": "Chromium",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 36332,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "C:\\Users\\HP\\Desktop\\Abhi_Playwright\\tests\\APITesting.spec.js",
+                        "column": 52,
+                        "line": 36
+                      },
+                      "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[routerlink*=\\'cart\\']')\u001b[22m\n\n\n\u001b[0m \u001b[90m 34 |\u001b[39m                 }   \n \u001b[90m 35 |\u001b[39m             }\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 36 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m\"[routerlink*='cart']\"\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 37 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m\"div li\"\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m.\u001b[39mwaitFor()\u001b[33m;\u001b[39m\n \u001b[90m 38 |\u001b[39m         \u001b[36mconst\u001b[39m bool \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m\"h3:has-text('ZARA COAT 3')\"\u001b[39m)\u001b[33m.\u001b[39misVisible()\u001b[33m;\u001b[39m\n \u001b[90m 39 |\u001b[39m         expect(bool)\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\HP\\Desktop\\Abhi_Playwright\\tests\\APITesting.spec.js:36:52\u001b[22m"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "{\n  token: \u001b[32m'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTI1MGY0MDE3ZWUzZTc4YmFjMjlkNWMiLCJ1c2VyRW1haWwiOiJhYmNkQGFiaGkuY29tIiwidXNlck1vYmlsZSI6OTg3NjU3ODkwNSwidXNlclJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4MTQ3OTY4OCwiZXhwIjoxODEzMDM3Mjg4fQ.JNfmTkDQwvonLAZyZRqAKTaBl6a-vLA_MGy3C2VV1HM'\u001b[39m,\n  userId: \u001b[32m'6a250f4017ee3e78bac29d5c'\u001b[39m,\n  message: \u001b[32m'Login Successfully'\u001b[39m\n}\n"
+                    },
+                    {
+                      "text": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTI1MGY0MDE3ZWUzZTc4YmFjMjlkNWMiLCJ1c2VyRW1haWwiOiJhYmNkQGFiaGkuY29tIiwidXNlck1vYmlsZSI6OTg3NjU3ODkwNSwidXNlclJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4MTQ3OTY4OCwiZXhwIjoxODEzMDM3Mjg4fQ.JNfmTkDQwvonLAZyZRqAKTaBl6a-vLA_MGy3C2VV1HM\n"
+                    },
+                    {
+                      "text": "[]\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-06-14T23:28:07.870Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\HP\\Desktop\\Abhi_Playwright\\test-results\\APITesting-Add-to-Cart-Chromium\\test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\HP\\Desktop\\Abhi_Playwright\\test-results\\APITesting-Add-to-Cart-Chromium\\video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\HP\\Desktop\\Abhi_Playwright\\test-results\\APITesting-Add-to-Cart-Chromium\\error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "3c5e87d39b31df6c5479-b0137c61f50d586ed5ac",
+          "file": "APITesting.spec.js",
+          "line": 16,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-06-14T23:28:06.608Z",
+    "duration": 52985.80499999999,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

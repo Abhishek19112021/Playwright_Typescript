@@ -1,0 +1,69 @@
+{
+  "name": "abhi_playwright",
+  "version": "1.0.0",
+  "description": "Playwright Enterprise E2E Setup",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:ci": "npx playwright test --reporter=dot",
+    "test:excel:js": "npx playwright test tests/downloadUploadExcel.spec.js --project=chromium",
+    "build:tests": "tsc -p tsconfig.json",
+    "test:excel:ts": "npm run build:tests && npx playwright test tests/downloadUploadExcel.spec.ts --project=chromium",
+    "test:excel": "npm run test:excel:js && npm run test:excel:ts",
+    "test:auth": "npm run build:tests && npx playwright test tests/auth-smoke.spec.ts --project=chromium",
+    "test:report": "npx playwright show-report",
+    "test:ts-node": "cross-env NODE_OPTIONS=-r ts-node/register npx playwright test",
+    "package:artifacts": "node scripts/package-artifacts.js",
+    "prettier:check": "npx prettier --check \"**/*.{js,ts,json,md}\" || true",
+    "prettier:fix": "npx prettier --write \"**/*.{js,ts,json,md}\"",
+    "lint": "eslint . --ext .js,.ts",
+    "lint:fix": "eslint . --ext .js,.ts --fix",
+    "precommit": "npx lint-staged || npm run lint",
+    "auth:generate": "node scripts/generate-storageState.js",
+    "playwright:install": "npx playwright install --with-deps",
+    "ci": "npm ci && npm run build:tests && npx playwright install --with-deps && npm run test:ci && npm run package:artifacts",
+    "build": "npm run build:tests",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "playwright": "^1.60.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "eslint": "^8.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.8",
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.1",
+    "prettier": "^2.8.0",
+    "cross-env": "^7.0.3",
+    "archiver": "^5.3.1",
+    "@aws-sdk/client-s3": "^3.400.0",
+    "@octokit/rest": "^19.0.7"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

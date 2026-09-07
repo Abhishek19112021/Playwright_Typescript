@@ -1,0 +1,52 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="1" time="52.98580499999999">
+<testsuite name="APITesting.spec.js" timestamp="2026-06-14T23:28:07.265Z" hostname="Chromium" tests="1" failures="0" skipped="0" time="36.332" errors="1">
+<testcase name="Add to Cart" classname="APITesting.spec.js" time="36.332">
+<system-out>
+<![CDATA[{
+  token: [32m'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTI1MGY0MDE3ZWUzZTc4YmFjMjlkNWMiLCJ1c2VyRW1haWwiOiJhYmNkQGFiaGkuY29tIiwidXNlck1vYmlsZSI6OTg3NjU3ODkwNSwidXNlclJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4MTQ3OTY4OCwiZXhwIjoxODEzMDM3Mjg4fQ.JNfmTkDQwvonLAZyZRqAKTaBl6a-vLA_MGy3C2VV1HM'[39m,
+  userId: [32m'6a250f4017ee3e78bac29d5c'[39m,
+  message: [32m'Login Successfully'[39m
+}
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTI1MGY0MDE3ZWUzZTc4YmFjMjlkNWMiLCJ1c2VyRW1haWwiOiJhYmNkQGFiaGkuY29tIiwidXNlck1vYmlsZSI6OTg3NjU3ODkwNSwidXNlclJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4MTQ3OTY4OCwiZXhwIjoxODEzMDM3Mjg4fQ.JNfmTkDQwvonLAZyZRqAKTaBl6a-vLA_MGy3C2VV1HM
+[]
+
+[[ATTACHMENT|test-results\APITesting-Add-to-Cart-Chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\APITesting-Add-to-Cart-Chromium\video.webm]]
+
+[[ATTACHMENT|test-results\APITesting-Add-to-Cart-Chromium\error-context.md]]
+]]>
+</system-out>
+<error message="Test timeout of 30000ms exceeded." type="Error">
+<![CDATA[  [Chromium] › APITesting.spec.js:16:1 › Add to Cart ───────────────────────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('[routerlink*=\'cart\']')
+
+
+      34 |                 }   
+      35 |             }
+    > 36 |         await page.locator("[routerlink*='cart']").click();
+         |                                                    ^
+      37 |         await page.locator("div li").first().waitFor();
+      38 |         const bool = await page.locator("h3:has-text('ZARA COAT 3')").isVisible();
+      39 |         expect(bool).toBeTruthy();
+        at C:\Users\HP\Desktop\Abhi_Playwright\tests\APITesting.spec.js:36:52
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\APITesting-Add-to-Cart-Chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\APITesting-Add-to-Cart-Chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\APITesting-Add-to-Cart-Chromium\error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+</testsuites>

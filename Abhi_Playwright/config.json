@@ -1,0 +1,6 @@
+{
+  "baseUrl": "https://example.com",
+  "timeout": 100000,
+  "browsers": ["chromium"],
+  "retries": 0
+}

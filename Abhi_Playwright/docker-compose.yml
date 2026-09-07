@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  e2e:
+    build: .
+    volumes:
+      - ./:/workspace
+    environment:
+      - CI=true
+    command: npm run test:ci

@@ -1,0 +1,23 @@
+{
+  "name": "exceljs-copilot-project",
+  "version": "1.0.0",
+  "description": "A Node.js project demonstrating reading and writing Excel files using ExcelJS with Microsoft Copilot assistance",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "excel",
+    "exceljs",
+    "copilot",
+    "nodejs",
+    "read",
+    "write"
+  ],
+  "author": "Abhishek",
+  "license": "MIT",
+  "dependencies": {
+    "exceljs": "^4.4.0"
+  }
+}
