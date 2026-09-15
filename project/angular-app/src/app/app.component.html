@@ -1,0 +1,19 @@
+<main class="shell">
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark">A</span><span><strong>Abhishek</strong><small>ACADEMY</small></span></div>
+    <nav><a class="selected"><span>◈</span> Learning hub</a><a><span>⌘</span> Labs</a><a><span>◫</span> Playbooks</a><a><span>◌</span> Community</a></nav>
+    <div class="mentor-card"><div class="avatar">AS</div><strong>Abhishek Sharma</strong><span>Principal QA mentor</span><button>View profile <span>↗</span></button></div>
+    <div class="sidebar-footer"><span class="status-dot"></span> All systems operational</div>
+  </aside>
+
+  <section class="content">
+    <header class="topbar"><div class="crumb">LEARNING HUB <span>/</span> YOUR PATH</div><div class="top-actions"><button class="icon-btn">⌕</button><button class="icon-btn">♧</button><div class="mini-avatar">JD</div></div></header>
+    <div class="hero"><div><p class="eyebrow">TUESDAY · 16 SEPTEMBER 2026</p><h1>Become the engineer<br><em>teams rely on.</em></h1><p class="hero-copy">A practical path from your first test to an enterprise-grade quality platform. Learn by shipping, not by watching.</p><button class="primary-btn">Resume your path <span>↗</span></button></div><div class="hero-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="core">QA<br><small>CRAFT</small></div><span class="float-chip chip-one">{ } API</span><span class="float-chip chip-two">◒ DATA</span><span class="float-chip chip-three">↗ LOAD</span></div></div>
+
+    <div class="section-heading"><div><p class="eyebrow">THE CURRICULUM</p><h2>Three tracks. One complete practice.</h2></div><button class="text-btn">View all modules <span>↗</span></button></div>
+    <div class="track-grid"><button *ngFor="let track of tracks; let i = index" class="track-card" [class.active]="activeTrack === i" (click)="selectTrack(i)"><div class="card-top"><span class="track-icon" [class]="track.accent">{{ track.icon }}</span><span class="arrow">↗</span></div><p class="card-label">{{ track.type }}</p><h3>{{ track.title }}</h3><p class="card-description">{{ track.description }}</p><div class="card-meta"><span>{{ track.level }}</span><span>{{ track.duration }}</span></div><div class="progress"><span [style.width.%]="track.progress"></span></div><div class="progress-copy"><span>{{ track.progress }}% complete</span><span>{{ track.progress ? 'Continue' : 'Start track' }}</span></div></button></div>
+
+    <section class="focus-panel"><div class="focus-intro"><p class="eyebrow">UP NEXT FOR YOU</p><h2>{{ currentTrack.title }}</h2><p>{{ currentTrack.description }}</p><button class="dark-btn">Open learning plan <span>↗</span></button></div><div class="module-list"><div class="module-list-head"><span>MODULES</span><span>{{ currentTrack.modules.length }} TOTAL</span></div><div class="module" *ngFor="let module of currentTrack.modules; let i = index"><span class="module-number">0{{ i + 1 }}</span><strong>{{ module }}</strong><span class="module-status" [class.done]="i === 0 && currentTrack.progress > 30">{{ i === 0 && currentTrack.progress > 30 ? 'DONE' : 'LOCKED' }}</span></div></div></section>
+    <footer><span>© 2026 Abhishek Academy</span><span>Built for the curious QA engineer.</span></footer>
+  </section>
+</main>

@@ -2,7 +2,7 @@ const{test , expect} = require("@playwright/test");
 
 test("E2Etest", async({page})=>{
 
-    const url = "https://rahulshettyacademy.com/client";
+    const url = "";
     const email = "abcd@abhi.com";
     const password = "Abc@987654321"
     const productName = "ZARA COAT 3";

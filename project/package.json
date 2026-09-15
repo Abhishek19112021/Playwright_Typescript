@@ -1,0 +1,5 @@
+{
+  "name": "abhishek-academy-workspace",
+  "private": true,
+  "scripts": { "install:all": "npm install --prefix angular-app; npm install --prefix vue-app; npm install --prefix api; npm install --prefix automation-tests", "build:angular": "npm run build --prefix angular-app", "build:vue": "npm run build --prefix vue-app", "api": "npm start --prefix api", "api:test": "npm test --prefix api", "ui:test": "npm run playwright --prefix automation-tests", "selenium:test": "npm run selenium --prefix automation-tests" }
+}

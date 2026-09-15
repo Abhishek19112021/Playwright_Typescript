@@ -42,14 +42,28 @@ test('visual',async({page})=>
     expect(await page.screenshot()).toMatchSnapshot('landing.png');
 
 });
-test.only(" More validations",async({page})=>
+test(" More validations",async({page})=>
 {
     await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
+    const parentFrame = page.frameLocator('#courses-iframe');
 
-   // let expectedText ="Get Shortlisted by Recruiters - Take QA Skill Assessments on TechSmartHire";
-  let t
-})
+    await expect(page.locator('#courses-iframe')).toBeVisible();
+    const coursesLink = parentFrame.locator('a:has-text("Courses")').first();
+    await coursesLink.waitFor();
+    await coursesLink.click();
 
+    const browseProducts = parentFrame.locator('h2:has-text("Browse products")');
+    await expect(browseProducts).toBeVisible();
+    const frameText = await browseProducts.textContent();
+    console.log(frameText);
+
+    await page.locator('input[value="radio1"]').check();
+
+    const courseTitle = parentFrame.locator('h2:has-text("Selenium Webdriver with Java")');
+    await expect(courseTitle).toBeVisible();
+    const innerText = await courseTitle.textContent();
+    console.log(innerText);
+});
 
 
 

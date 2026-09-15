@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: academy
+      POSTGRES_USER: academy
+      POSTGRES_PASSWORD: academy_local_only
+    ports:
+      - "5432:5432"
+    volumes:
+      - academy-db:/var/lib/postgresql/data
+volumes:
+  academy-db:
