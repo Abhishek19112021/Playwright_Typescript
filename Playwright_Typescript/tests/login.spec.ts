@@ -4,7 +4,8 @@ test('has title', async ({ page }) => {
   const text :string = await page.locator('(//p)[1]').innerText();
   const userName : string = text.split(" ")[2]
   const password : string = text.split(" ")[6]
-  const enhancedPassword = password.slice(0,-1);
+  const enhancedPassword = password.slice(0,-1).substring(0,8)
+  console.log(enhancedPassword)
   const userNameTextbox = page.locator('//input[@id="username"]');
   await userNameTextbox.fill(userName);
 

@@ -1,6 +1,8 @@
 ﻿const { test, expect } = require('@playwright/test');
 
-async function findProduct(page, productName, totalPages = 5) {
+async function findProduct(page, productName) {
+
+  let totalPages = await page.locator('//section[@id="sec-shopping-products"]//div[@class="page-btns"]/button').count();
   for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
     const table = page.locator('//table[@aria-label="Shopping products — all-in-one"]');
     const rows = table.locator('tbody tr');
@@ -20,8 +22,8 @@ async function findProduct(page, productName, totalPages = 5) {
   }
 }
 
-async function findProductWithLoop(page, productName, totalPages = 5) {
-  return findProduct(page, productName, totalPages);
+async function findProductWithLoop(page, productName) {
+  return findProduct(page, productName);
 }
 
 test('pagination', async ({ page }) => {
