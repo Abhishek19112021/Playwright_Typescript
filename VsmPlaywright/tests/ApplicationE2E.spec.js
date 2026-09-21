@@ -25,8 +25,5 @@ test("E2Etest", async({page})=>{
       }
     }
     await expect(page.locator("//div[@aria-label='Product Added To Cart']")).toBeVisible();
-    await page.locator("//button[@routerlink='/dashboard/cart']").click();
-
-
-    
+    await page.locator("//button[@routerlink='/dashboard/cart']").click();   
 });
