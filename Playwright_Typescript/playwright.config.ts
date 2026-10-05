@@ -19,7 +19,7 @@ export default defineConfig({
         video: 'on',
         headless: false,
         actionTimeout: 5 *1000,
-        navigationTimeout: 10000,
+        navigationTimeout: 15000,
         viewport: {width: 500 , height:500 }
     },
     projects: [
