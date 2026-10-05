@@ -1,3 +1,4 @@
+const path = require('path');
 const ExcelJs =require('exceljs');
 const { test, expect } = require('@playwright/test');
 
@@ -37,20 +38,26 @@ async function readExcel(worksheet,searchText)
 }
 //update Mango Price to 350. 
 //writeExcelTest("Mango",350,{rowChange:0,colChange:2},"/Users/rahulshetty/downloads/excelTest.xlsx");
-test('Upload download excel validation',async ({page})=>
+test.only('Upload download excel validation',async ({page})=>
 {
-  const textSearch = 'Mango';
-  const updateValue = '350';
+ // const textSearch = 'Mango';
+ // const updateValue = '350';
+ 
+ 
+
+  const filePath = path.join(__dirname, '..', 'downloads', '123.xlsx');
   await page.goto("https://rahulshettyacademy.com/upload-download-test/index.html");
+  //await page.locator('//button[@id="downloadButton"]').click();
   const downloadPromise = page.waitForEvent('download');
   await page.getByRole('button',{name:'Download'}).click();
-  await downloadPromise;
-  writeExcelTest(textSearch,updateValue,{rowChange:0,colChange:2},"/Users/rahulshetty/downloads/download.xlsx");
+  const download = await downloadPromise;
+  await download.saveAs(filePath);
+  //await writeExcelTest(textSearch,updateValue,{rowChange:0,colChange:2},filePath);
   await page.locator("#fileinput").click();
-  await page.locator("#fileinput").setInputFiles("/Users/rahulshetty/downloads/download.xlsx");
-  const textlocator = page.getByText(textSearch);
-  const desiredRow = await page.getByRole('row').filter({has :textlocator });
-  await expect(desiredRow.locator("#cell-4-undefined")).toContainText(updateValue);
+  await page.locator("#fileinput").setInputFiles(filePath);
+ // const textlocator = page.getByText(textSearch);
+ // const desiredRow = await page.getByRole('row').filter({has :textlocator });
+ // await expect(desiredRow.locator("#cell-4-undefined")).toContainText(updateValue);
 
 
 

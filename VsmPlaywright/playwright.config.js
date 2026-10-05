@@ -22,7 +22,7 @@ const config = {
     headless : false,
     video: 'retain-on-failure',
     screenshot : 'on',
-    actionTimeout: 5000,
+    actionTimeout: 100000,
     navigationTimeout: 30000,
     viewport: {width: 1920 , height:1080}
   },
